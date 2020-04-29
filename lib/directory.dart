@@ -43,7 +43,7 @@ class Directory extends StatefulWidget {
 }
 
 class _DirectoryState extends State<Directory> {
-  List<String> _dirs;
+  List<String> _dirs = new List<String>();
 
   Future<String> loadAsset() async {
     return await rootBundle.loadString('directories/first.txt');
@@ -53,12 +53,14 @@ class _DirectoryState extends State<Directory> {
   void initState() {
     super.initState();
     print("Start reading");
-    loadAsset().then((String contents) {
-      LineSplitter ls = new LineSplitter();
-      setState(() {
-        _dirs = ls.convert(contents);
+    if (_dirs.isEmpty) {
+      loadAsset().then((String contents) {
+        LineSplitter ls = new LineSplitter();
+        setState(() {
+          _dirs = ls.convert(contents);
+        });
       });
-    });
+    }
   }
 
   @override

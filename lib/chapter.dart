@@ -43,11 +43,13 @@ class _ChapterState extends State<Chapter> {
   void initState() {
     super.initState();
     print("Start loading ... ");
-    loadAsset().then((String contents) {
-      setState(() {
-        _contents = contents;
+    if (_contents == null) {
+      loadAsset().then((String contents) {
+        setState(() {
+          _contents = contents;
+        });
       });
-    });
+    }
   }
 
   @override

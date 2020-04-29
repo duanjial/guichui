@@ -26,11 +26,13 @@ class MyHomePage extends StatelessWidget {
         body: Column(
           children: <Widget>[
             AppBar(
-                backgroundColor: Colors.purple,
-                title: Text(
-                  "鬼吹灯\n精绝古城",
-                  textAlign: TextAlign.center,
-                )),
+              backgroundColor: Colors.purple,
+              title: Center(
+                  child: Text(
+                "鬼吹灯\n精绝古城",
+                textAlign: TextAlign.center,
+              )),
+            ),
             Container(
               margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
               width: double.infinity,
