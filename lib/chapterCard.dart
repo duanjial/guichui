@@ -3,7 +3,8 @@ import './chapter.dart';
 
 class ChapterCard extends StatelessWidget {
   final title;
-  ChapterCard(this.title);
+  final index;
+  ChapterCard(this.title, this.index);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +18,7 @@ class ChapterCard extends StatelessWidget {
             print('$title tapped.');
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Chapter(title)),
+              MaterialPageRoute(builder: (context) => Chapter(title, index)),
             );
           },
           child: Center(
