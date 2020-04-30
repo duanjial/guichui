@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './directory.dart';
+import './home.dart';
+import './bookshelf.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final _description =
+      "《鬼吹灯》是2006年由安徽文艺出版社出版的图书，作者是天下霸唱。主要内容是盗墓寻宝，是一部极为经典的悬疑盗墓小说，这部小说也迅速成为了图书销售排行榜的榜首。";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,25 +33,47 @@ class MyHomePage extends StatelessWidget {
               backgroundColor: Colors.purple,
               title: Center(
                   child: Text(
-                "鬼吹灯\n精绝古城",
+                "鬼吹灯",
                 textAlign: TextAlign.center,
               )),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+              margin: const EdgeInsets.all(5.0),
               width: double.infinity,
-              child: Column(
-                children: <Widget>[
-                  Image(
-                    height: 300,
-                    image: AssetImage('covers/1.jpeg'),
-                    fit: BoxFit.fill,
+              height: 40,
+              child: Card(
+                color: Colors.lightGreen,
+                child: Center(
+                  child: Text(
+                    "~~~~~~ Newly Added ~~~~~~",
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    textAlign: TextAlign.center,
                   ),
-                ],
+                ),
               ),
-              height: 300,
             ),
-            Directory(),
+            BookShelf(),
+            Text(
+              "简介",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(15),
+              child: RichText(
+                text: TextSpan(
+                  text: _description,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 25,
+                    letterSpacing: 2,
+                  ),
+                ),
+              ),
+            ),
           ],
         ));
   }
