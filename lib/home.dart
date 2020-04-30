@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
               ),
               height: 300,
             ),
-            Directory(),
+            Directory(_index + 1),
           ],
         ));
   }
