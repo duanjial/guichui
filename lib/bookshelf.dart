@@ -48,7 +48,7 @@ class BookShelf extends StatelessWidget {
               "鬼吹灯\n" + _books[index],
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.white70,
                 fontSize: 13,
               ),
             ),
