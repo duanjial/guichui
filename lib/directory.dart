@@ -5,8 +5,6 @@ import 'dart:async';
 import 'dart:convert';
 
 class Directory extends StatefulWidget {
-  // final FileStorage storage;
-
   // Directory({Key key, @required this.storage}) : super(key: key);
   final _index;
   Directory(this._index);
@@ -44,7 +42,7 @@ class _DirectoryState extends State<Directory> {
         padding: const EdgeInsets.all(8),
         itemCount: _dirs.length,
         itemBuilder: (BuildContext context, int index) {
-          return ChapterCard(_dirs[index], index);
+          return ChapterCard(_dirs[index], _index, index);
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),

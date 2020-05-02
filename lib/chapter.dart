@@ -5,9 +5,10 @@ import 'dart:async';
 class Chapter extends StatefulWidget {
   final chapterTitle;
   final index;
-  Chapter(this.chapterTitle, this.index);
-  _ChapterState createState() =>
-      _ChapterState(chapterTitle, 'chapters/' + index.toString() + '.txt');
+  final bookIndex;
+  Chapter(this.chapterTitle, this.bookIndex, this.index);
+  _ChapterState createState() => _ChapterState(chapterTitle,
+      'chapters/' + bookIndex.toString() + "/" + index.toString() + '.txt');
 }
 
 class _ChapterState extends State<Chapter> {
@@ -56,22 +57,23 @@ class _ChapterState extends State<Chapter> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.brown,
         appBar: AppBar(
           centerTitle: true,
+          backgroundColor: Colors.brown[400],
           title: Text(chapterTitle),
         ),
         body: Container(
-          margin: EdgeInsets.all(15),
+          margin: EdgeInsets.all(10),
           child: SingleChildScrollView(
             child: RichText(
+              textAlign: TextAlign.start,
               text: TextSpan(
                 text: _contents,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.white70,
                   fontStyle: FontStyle.normal,
-                  fontSize: 25,
-                  letterSpacing: 3,
+                  fontSize: 23,
                 ),
               ),
             ),

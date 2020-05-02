@@ -43,7 +43,14 @@ flutter:
   assets:
     - covers/
     - directories/
-    - chapters/
+    - chapters/1/
+    - chapters/2/
+    - chapters/3/
+    - chapters/4/
+    - chapters/5/
+    - chapters/6/
+    - chapters/7/
+    - chapters/8/
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -2,23 +2,31 @@ import 'package:flutter/material.dart';
 import './home.dart';
 
 class BookShelf extends StatelessWidget {
-  final _books = ["精绝古城", "龙岭迷窟", "云南虫谷", "昆仑神宫"];
+  final _books = [
+    "精绝古城",
+    "龙岭迷窟",
+    "云南虫谷",
+    "昆仑神宫",
+    "黄皮子坟",
+    "南海归墟",
+    "怒晴湘西",
+    "巫峡棺山"
+  ];
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: ListView.separated(
+    return ListView.separated(
       scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(5),
       itemCount: _books.length,
       itemBuilder: (BuildContext context, int index) {
         return Column(
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0),
-              width: 125,
-              height: 150,
+              margin: const EdgeInsets.only(top: 3.0, left: 3.0),
+              width: 128,
+              height: 190,
               child: Card(
-                color: Colors.purple,
+                // color: Colors.purple,
                 child: InkWell(
                   // splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
@@ -29,7 +37,7 @@ class BookShelf extends StatelessWidget {
                     );
                   },
                   child: Image(
-                    height: 150,
+                    height: 190,
                     image: AssetImage("covers/" + index.toString() + ".jpeg"),
                     fit: BoxFit.fill,
                   ),
@@ -48,6 +56,6 @@ class BookShelf extends StatelessWidget {
         );
       },
       separatorBuilder: (BuildContext context, int index) => const Divider(),
-    ));
+    );
   }
 }
